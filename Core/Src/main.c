@@ -16,25 +16,24 @@ int main(void)
 {
 
 
-  /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
-  init_hal();
+	/* Reset of all peripherals, Initializes the Flash interface and the Systick.*/
+	init_hal();
 
-  /* Configure the system clock */
-  config_system_clock();
+	/* Configure the system clock */
+	config_system_clock();
 
-  /* Initialize all configured peripherals */
-  init_gpio();
-  init_uart();
-  config_timer();
+	/* Initialize all configured peripherals */
+	init_gpio();
+	init_uart();
+	config_timer();
 
-  tim_base_start_interrupt();
+	tim_base_start_interrupt();
 
 
-  /* Infinite loop */
-  while (1)
-  {
+	/* Infinite loop */
+	while (1){
 
-  }
+	}
 
 }
 

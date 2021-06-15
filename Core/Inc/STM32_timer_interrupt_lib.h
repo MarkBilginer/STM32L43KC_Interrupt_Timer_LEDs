@@ -22,11 +22,11 @@ void init_hal(void);
 void config_system_clock(void);
 void init_gpio(void);
 void init_uart(void);
+void tim_base_start_interrupt(void);
 void init_tim1(uint32_t prescaler, uint32_t cnt_mode, uint32_t period,
 		uint32_t clk_div, uint32_t rep_cnt, uint32_t auto_re_pre);
 void init_tim2(uint32_t prescaler, uint32_t cnt_mode, uint32_t period,
 		uint32_t clk_div, uint32_t auto_re_pre);
-void tim_base_start_interrupt(void);
 
 /* Private defines -----------------------------------------------------------*/
 #define MCO_Pin GPIO_PIN_0
