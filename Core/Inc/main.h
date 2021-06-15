@@ -1,11 +1,11 @@
-/*
- * main.h
+/** @file main.h
+ *  @brief Import from application layer.
  *
- *  Created on: 25 May 2021
- *      Author: mark
+ *  @author Mark Bilginer (GitHub: MarkBilginer)
+ *  @bug No known bugs.
  */
 
-/* Define to prevent recursive inclusion -------------------------------------*/
+/* -- Define to prevent recursive inclusion -- */
 #ifndef __MAIN_H
 #define __MAIN_H
 
@@ -13,7 +13,9 @@
 extern "C" {
 #endif
 
-/* Includes ------------------------------------------------------------------*/
+/* -- Includes -- */
+
+/* -- Application abstraction layer -- */
 #include "timer_interrupt_app.h"
 
 #ifdef __cplusplus

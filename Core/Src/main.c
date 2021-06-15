@@ -1,26 +1,34 @@
-/*
- * main.c
+/** @file main.c
+ *  @brief Application entry point.
  *
- *  Created on: 25 May 2021
- *      Author: mark
+ *  This file contains the applications' main() function.
+ *
+ *  This is the entry point for the application.
+ *  Application name is STM32_Interrupt_Timer_LEDs.
+ *  What the Application does? Toggles external two
+ *  LEDs on and of at two different intervals, 0.1s and
+ *  1s.
+ *
+ *  @author Mark Bilginer (GitHub: MarkBilginer)
+ *  @bug No known bugs.
  */
-/* Includes ------------------------------------------------------------------*/
+
+/* -- Includes -- */
 #include "main.h"
 
-
-/**
-  * @brief  The application entry point.
-  * @return int
-  */
+/** @brief Application entry point.
+ *
+ *  This is the entry point for your Application.
+ *  You will use this to test and debug your
+ *  application.
+ *
+ * @todo timer base and interrupt to be stopped.
+ * @return Should not return.
+ */
 int main(void)
 {
-
 	application();
-
 }
-
-
-
 
 #ifdef  USE_FULL_ASSERT
 /**

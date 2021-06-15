@@ -1,11 +1,16 @@
-/*
- * timer_interrupt_app.c
+/** @file timer_interrupt_app.c
+ *  @brief Application helper and wrapper functions.
  *
- *  Created on: 25 May 2021
- *      Author: mark
+ *  This file contains the applications' helper and wrapper functions.
+ *  Aims to make the code more readable. Application layer,
+ *  library layer and driver layer concept was in mind.
+ *
+ *  @author Mark Bilginer (GitHub: MarkBilginer)
+ *  @bug No known bugs.
  */
 
 #include "timer_interrupt_app.h"
+
 
 void config_timer(void)
 {

@@ -1,10 +1,13 @@
-/*
- * STM32_timer_interrupt_lib.c
+/** @file STM32_timer_interrupt_lib.c
+ *  @brief Library layer for the STM32L4.
  *
- *  Created on: 25 May 2021
- *      Author: mark
+ *  This file contains the applications' library abstraction layer, wrapping
+ *  the driver layer functions which are vendor specific. Aims at making
+ *  the code more portable.
+ *
+ *  @author Mark Bilginer (GitHub: MarkBilginer)
+ *  @bug No known bugs.
  */
-
 
 #include "STM32_timer_interrupt_lib.h"
 
@@ -13,10 +16,7 @@ TIM_HandleTypeDef htim2;
 
 UART_HandleTypeDef huart2;
 
-/**
-  * @brief  This function is executed in case of error occurrence.
-  * @return None
-  */
+
 void Error_Handler(void){
   /* User can add his own implementation to report the HAL error return state */
 	__disable_irq();
@@ -30,10 +30,6 @@ void init_hal(void){
 	HAL_Init();
 }
 
-/**
-  * @brief System Clock Configuration
-  * @retval None
-  */
 void config_system_clock(void)
 {
 	RCC_OscInitTypeDef RCC_OscInitStruct = {0};
@@ -89,11 +85,6 @@ void config_system_clock(void)
 	HAL_RCCEx_EnableMSIPLLMode();
 }
 
-/**
-  * @brief GPIO Initialization Function
-  * @param None
-  * @return None
-  */
 void init_gpio(void)
 {
 	GPIO_InitTypeDef GPIO_InitStruct = {0};
@@ -124,20 +115,9 @@ void init_gpio(void)
 	HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 }
 
-/**
-  * @brief USART2 Initialization Function
-  * @param None
-  * @return None
-  */
+
 void init_uart(uint32_t baudrate)
 {
-	/* USER CODE BEGIN USART2_Init 0 */
-
-	/* USER CODE END USART2_Init 0 */
-
-	/* USER CODE BEGIN USART2_Init 1 */
-
-	/* USER CODE END USART2_Init 1 */
 	huart2.Instance = USART2;
 	huart2.Init.BaudRate = 115200;
 	huart2.Init.WordLength = UART_WORDLENGTH_8B;
@@ -153,25 +133,12 @@ void init_uart(uint32_t baudrate)
 	}
 }
 
-/**
-  * @brief TIM1 Initialization Function
-  * @param None
-  * @return None
-  */
 void init_tim1(uint32_t prescaler, uint32_t cnt_mode, uint32_t period,
 				uint32_t clk_div, uint32_t rep_cnt, uint32_t auto_re_pre)
 {
-
-	/* USER CODE BEGIN TIM1_Init 0 */
-
-	/* USER CODE END TIM1_Init 0 */
-
 	TIM_ClockConfigTypeDef sClockSourceConfig = {0};
 	TIM_MasterConfigTypeDef sMasterConfig = {0};
 
-	/* USER CODE BEGIN TIM1_Init 1 */
-
-	/* USER CODE END TIM1_Init 1 */
 	htim1.Instance = TIM1;
 	htim1.Init.Prescaler = prescaler;
 	htim1.Init.CounterMode = cnt_mode;
@@ -202,16 +169,9 @@ void init_tim1(uint32_t prescaler, uint32_t cnt_mode, uint32_t period,
 void init_tim2(uint32_t prescaler, uint32_t cnt_mode, uint32_t period,
 		uint32_t clk_div, uint32_t auto_re_pre)
 {
-	/* USER CODE BEGIN TIM2_Init 0 */
-
-	/* USER CODE END TIM2_Init 0 */
-
 	TIM_ClockConfigTypeDef sClockSourceConfig = {0};
 	TIM_MasterConfigTypeDef sMasterConfig = {0};
 
-	/* USER CODE BEGIN TIM2_Init 1 */
-
-	/* USER CODE END TIM2_Init 1 */
 	htim2.Instance = TIM2;
 	htim2.Init.Prescaler = prescaler;
 	htim2.Init.CounterMode = cnt_mode;
@@ -240,7 +200,7 @@ void tim_base_start_interrupt(void)
 }
 
 /** @brief Period elapsed callback in non-blocking mode,
- * 		toggles LED GREEN and RED
+ * 		toggles LED GREEN and RED.
  *
  * @param htim TIM handle
  * @return None
