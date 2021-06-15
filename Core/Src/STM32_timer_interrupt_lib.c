@@ -129,7 +129,7 @@ void init_gpio(void)
   * @param None
   * @return None
   */
-void init_uart(void)
+void init_uart(uint32_t baudrate)
 {
 	/* USER CODE BEGIN USART2_Init 0 */
 

@@ -14,3 +14,25 @@ void config_timer(void)
 	init_tim2(1000, TIM_COUNTERMODE_UP, 64000, TIM_CLOCKDIVISION_DIV1,
 			TIM_AUTORELOAD_PRELOAD_ENABLE);
 }
+
+void setup_mcu(void)
+{
+	/* Reset of all peripherals, Initializes the Flash interface and the Systick.*/
+	init_hal();
+
+	/* Configure the system clock */
+	config_system_clock();
+
+	/* Initialize all configured peripherals */
+	init_gpio();
+	init_uart(115200);
+	config_timer();
+
+}
+
+void application(void)
+{
+	setup_mcu();
+
+	tim_base_start_interrupt();
+}

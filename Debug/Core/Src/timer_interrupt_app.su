@@ -1,1 +1,3 @@
 timer_interrupt_app.c:10:6:config_timer	16	static
+timer_interrupt_app.c:18:6:setup_mcu	8	static
+timer_interrupt_app.c:33:6:application	8	static

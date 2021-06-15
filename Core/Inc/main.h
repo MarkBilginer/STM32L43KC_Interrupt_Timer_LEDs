@@ -16,8 +16,6 @@ extern "C" {
 /* Includes ------------------------------------------------------------------*/
 #include "timer_interrupt_app.h"
 
-
-
 #ifdef __cplusplus
 }
 #endif

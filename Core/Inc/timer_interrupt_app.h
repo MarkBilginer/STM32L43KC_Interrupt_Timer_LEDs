@@ -18,6 +18,8 @@ extern "C" {
 
 /* Exported functions prototypes ---------------------------------------------*/
 void config_timer(void);
+void setup_mcu(void);
+void application(void);
 
 /* Private defines -----------------------------------------------------------*/
 
