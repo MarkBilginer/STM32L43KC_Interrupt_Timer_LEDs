@@ -1,4 +1,4 @@
-/** @file STM32_timer_interrupt_lib.h.h
+/** @file STM32_timer_interrupt_lib.h
  *  @brief Library layer functions.
  *
  *  Provides a layer of abstraction. Aim is to make the application portable,
@@ -24,7 +24,7 @@ extern "C" {
 
 /* -- Exported functions prototypes -- */
 
-/** @brief  This function is executed in case of error occurrence.
+/** @brief This function is executed in case of error occurrence.
  *  @param None
  *  @return None
 */

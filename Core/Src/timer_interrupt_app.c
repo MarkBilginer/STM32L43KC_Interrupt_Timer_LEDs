@@ -9,6 +9,7 @@
  *  @bug No known bugs.
  */
 
+/* -- Includes -- */
 #include "timer_interrupt_app.h"
 
 
